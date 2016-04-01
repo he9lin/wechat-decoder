@@ -13,6 +13,10 @@ class App < Sinatra::Base
                          )
   end
 
+  configure :production, :development do
+    enable :logging
+  end
+
   get '/' do
     json({ status: :success })
   end
